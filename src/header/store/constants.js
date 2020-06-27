@@ -1,0 +1,6 @@
+export const TYPE_SEARCH = "SEARCH_FOCUS";
+export const SEARCH_BLUR = "SEARCH_BLUR";
+export const GETHEADERLIST = 'GETHEADERLIST';
+export const MOUSE_ENTER = 'MOUSE_ENTER';
+export const MOUSE_LEAVE = 'MOUSE_LEAVE';
+export const CHANGE_PAGE = 'CHANGE_PAGE';
