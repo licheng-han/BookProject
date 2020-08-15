@@ -1,50 +1,69 @@
-import {fromJS} from 'immutable';
-
+import { fromJS } from 'immutable';
+import * as constants from './constants';
+//
+// const defaultState = fromJS({
+//     topicList: [{
+//         "id": 1,
+//         "title": "社会热点",
+//         "imgUrl": "//upload.jianshu.io/collections/images/261938/man-hands-reading-boy-large.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+//     }, {
+//         "id": 2,
+//         "title": "手手绘",
+//         "imgUrl": "//upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+//     }],
+//     articleList:  [{
+//         "id": 1,
+//         "title": "胡歌12年后首谈车祸",
+//         "desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
+//         "imgUrl": "//upload-images.jianshu.io/upload_images/2259045-2986b9be86b01f63?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+//     }, {
+//         "id": 2,
+//         "title": "胡歌12年后首谈车祸：既然活下来了，就不能白白活着",
+//         "desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
+//         "imgUrl": "//upload-images.jianshu.io/upload_images/2259045-2986b9be86b01f63?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+//     }, {
+//         "id": 3,
+//         "title": "胡歌12年后首谈车祸：既然活下来了，就不能白白活着",
+//         "desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
+//         "imgUrl": "//upload-images.jianshu.io/upload_images/2259045-2986b9be86b01f63?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+//     }, {
+//         "id": 4,
+//         "title": "胡歌12年后首谈车祸：既然活下来了，就不能白白活着",
+//         "desc": "文/麦大人 01 胡歌又刷屏了。 近日他上了《朗读者》，而这一期的主题是“生命”，他用磁性的嗓音，朗读了一段《哈姆雷特》中的经典独白，相当震撼：...",
+//         "imgUrl": "//upload-images.jianshu.io/upload_images/2259045-2986b9be86b01f63?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+//     }],
+//     "recommendList": [{
+//         "id": 1,
+//         "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+//     }, {
+//         "id": 2,
+//         "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+//     }],
+//     articlePage: 1,
+//     showScroll: false
+// });
 const defaultState = fromJS({
-    topicList: [
-        {
-            id: "1",
-            title: "ddddd",
-            img: "https://oimagea6.ydstatic.com/image?id=6765010721196479494&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60"
-        },
-        {
-            id: "2",
-            title: "wwww",
-            img: "https://oimagea6.ydstatic.com/image?id=6765010721196479494&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60"
-        }
-    ],
-    articleList:[{
-        id:"1",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    },{
-        id:"2",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    },{
-        id:"3",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    },{
-        id:"4",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    },{
-        id:"5",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    },{
-        id:"6",
-        imgUrl:"https://oimagea5.ydstatic.com/image?id=-5285314247220546696&product=adpublish&w=300&h=200&sc=0&rm=2&gsb=0&gsbd=60",
-        title:"魔道祖师：番外篇之忘羡甜向小日常（四十一）",
-        desc:"路过彩衣镇时魏无羡看到街边有卖糖人的，非扯着蓝湛的袖子过去买。 蓝忘机在一旁提醒道：“魏婴，你最近牙疼，还是少吃些的好。” 魏无羡当作没听见，依..."
-    }]
+    topicList: [],
+    articleList: [],
+    recommendList: [],
+    articlePage: 1,
+    showScroll: false
 });
-export default (state = defaultState, action) => {
-    return state;
+
+const changHomeData = (state,action) =>{
+     return state.merge({
+        topicList: fromJS(action.topicList),
+        articleList: fromJS(action.articleList),
+        recommendList: fromJS(action.recommendList)
+    });
+};
+
+export default (state = defaultState, action)=>{
+    if(action.type === constants.CHANGE_HOME_DATA){
+        return changHomeData(state,action)
+    }else if(action.type === constants.TOGGLE_SCROLL_TOP){
+        return state.set('showScroll',action.show)
+    }
+    return state
 }
+window.state = defaultState;

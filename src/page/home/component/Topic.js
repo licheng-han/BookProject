@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import {TopicWrapper, TopicItem} from '../../../css/home';
 import {connect} from 'react-redux';
 
-class Topic extends Component {
+class Topic extends PureComponent {
     // eslint-disable-next-line no-useless-constructor
     constructor(props) {
         super(props);

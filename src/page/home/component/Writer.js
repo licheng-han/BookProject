@@ -1,12 +1,9 @@
-import React,{Component} from 'react';
+import React from 'react';
+import { WriterWrapper } from '../style';
 
-class Writer extends Component{
-    render() {
-        return(
-            <div>
-                Home
-            </div>
-        )
-    }
-}
+const Writer =(props) => (
+    <WriterWrapper>
+        home
+    </WriterWrapper>
+);
 export default Writer;

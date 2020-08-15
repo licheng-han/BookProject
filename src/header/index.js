@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
-import * as actionCreater from './store/actionCreater';
+import {actionCreater } from './store';
 import {
     HeaderWrapper,
     Logo,
