@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from './header';
-import detail from './page/detail'
 import home from './page/home'
 import {Provider} from 'react-redux';
 import store from './store'
 import {BrowserRouter,Route} from 'react-router-dom'
+import detail from './page/detail/loadable.js'
 import './API';
 
 

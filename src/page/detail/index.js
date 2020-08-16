@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-// import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import {DetailWrapper, Header, Content} from './style';
 import {actionCreater} from './store';
 
@@ -35,4 +35,4 @@ const mapDispatchToProps =(dispatch) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Detail);
+)(withRouter(Detail));

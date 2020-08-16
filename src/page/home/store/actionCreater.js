@@ -26,9 +26,10 @@ export const getHomeInfo = () => {
 
 export const getMoreList = (page) => {
     return (dispatch) => {
-        axios.get('/api/homeList.json?page=' + page).then((res) => {
-            const result = res.data.data;
-            dispatch(addHomeList(result, page + 1));
+        axios.get('/getHomeList').then((res) => {
+            const result = res.data.list;
+            dispatch(addHomeList(result.articleList,page));
+            console.log(result)
         });
     }
 };

@@ -3,7 +3,7 @@ import {
     HomeWrapper,
     HomeLeft,
     HomeRight,
-    BackTop
+    BackTop,
 } from './style'
 import Writer from './component/Writer';
 import Recommend from './component/Recommend';

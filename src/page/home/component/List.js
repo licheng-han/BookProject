@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ListItem, ListInfo, LoadMore} from '../../../css/home';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {actionCreater} from '../store'
 
 class List extends Component {
     // eslint-disable-next-line no-useless-constructor
@@ -10,7 +11,7 @@ class List extends Component {
     }
 
     render() {
-        const {list} = this.props;
+        const {list,articlePage} = this.props;
         return (
             <ListItem>
                 {
@@ -29,7 +30,7 @@ class List extends Component {
                         </Link>
                     ))
                 }
-                <LoadMore>
+                <LoadMore onClick={()=>{this.props.getMoreList(articlePage)}}>
                     更多文字
                 </LoadMore>
             </ListItem>
@@ -41,8 +42,13 @@ class List extends Component {
 
 const mapStateToProps = (state) => ({
     list: state.getIn(['home', 'articleList']),
+    articlePage:state.getIn(['home','articlePage'])
 });
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+    getMoreList(articlePage){
+        dispatch(actionCreater.getMoreList(articlePage+1));
+    }
+});
 export default connect(
     mapStateToProps,
     mapDispatchToProps
